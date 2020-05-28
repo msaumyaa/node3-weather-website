@@ -5,6 +5,8 @@ const geocode = require('./utils/geolocation')
 const forecast = require('./utils/forecast')
 
 const app = express()
+
+const port = process.env.PORT || 3000
 // by default express
 
 // console.log(__dirname) // directory name in which current file exist
@@ -119,6 +121,6 @@ app.get('*', (req,res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up and running, hell yes')
+app.listen(port, () => {
+    console.log('Server is up and running on '+ port)
 })
